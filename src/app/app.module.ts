@@ -24,7 +24,7 @@ import {
 } from '@nebular/theme';
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json' )
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 
@@ -41,8 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),

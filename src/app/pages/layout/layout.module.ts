@@ -38,7 +38,7 @@ import { TranslateModule } from '@ngx-translate/core';
     NbAccordionModule,
     NbUserModule,
     LayoutRoutingModule,
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
   ],
   declarations: [
     LayoutComponent,
