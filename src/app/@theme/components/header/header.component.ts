@@ -5,6 +5,7 @@ import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-header',
@@ -36,6 +37,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
     },
   ];
 
+  currentLanguage = 'en';
+
+  languages = [
+    {
+      label: 'EN',
+      value: 'en'
+    },
+    {
+      label: 'PT',
+      value: 'ptBr'
+    },
+  ];
+      // <nb-select size="small" [(selected)]="currentLanguage" (selectedChange)="changeLanguage()">
+      //   <nb-option *ngFor="let language of languages" [value]="language.value"  selected>{{language.label}}</nb-option>
+      // </nb-select>
+
   currentTheme = 'default';
 
   userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
@@ -45,7 +62,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private themeService: NbThemeService,
               private userService: UserData,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private breakpointService: NbMediaBreakpointsService,
+              private translateService: TranslateService
+              ) {
   }
 
   ngOnInit() {
@@ -90,5 +109,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  changeLanguage() {
+    this.translateService.use(this.currentLanguage);
   }
 }

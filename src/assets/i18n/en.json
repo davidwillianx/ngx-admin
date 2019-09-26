@@ -2,5 +2,9 @@
   "LIST": {
     "title": "Some friuts",
     "users": "users"
+  },
+  "TRAFFIC": {
+    "title": "Traffic"
   }
+
 }

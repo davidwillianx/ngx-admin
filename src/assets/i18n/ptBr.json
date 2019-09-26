@@ -2,6 +2,9 @@
   "LIST": {
     "title": "Algumas frutas",
     "users": "usuários"
+  },
+  "TRAFFIC": {
+    "title": "Tráfego"
   }
 
 }
